@@ -1,0 +1,11 @@
+channels:
+- conda-forge
+dependencies:
+- ipywidgets
+- widgetsnbextension
+- matplotlib
+- pandas
+- scikit-image
+- scikit-learn
+- tensorflow
+- keras

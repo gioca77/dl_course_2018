@@ -15,11 +15,13 @@ You should know the chain rules, since it is the core of the back propagation al
 
 * Statistics
 
-You should now the basic descriptive statistics (mean, standart deviation, median, z-transformation) and have a solid understanding of probability and e.g. know that P(A\|B) refers to the probability of event A given that event B was observed and P(A\|B)=P(A) in case of A and B are independent. You should also be familiar with some calculus like P(A,B)= P(A\|B) P(B). You might consider the following [cheat sheet](http://web.mit.edu/~csvoss/Public/usabo/stats_handout.pdf) (tests are not required). 
+You should know the basic descriptive statistics (mean, standart deviation, median, z-transformation) and have a solid understanding of probability and e.g. know that P(A\|B) refers to the probability of event A given that event B was observed and P(A\|B)=P(A) in case of A and B are independent. You should also be familiar with some calculus like P(A,B)= P(A\|B) P(B). You might consider the following [cheat sheet](http://web.mit.edu/~csvoss/Public/usabo/stats_handout.pdf) (tests are not required). 
 
 ### Computer stuff
 
-* Python
+* Python and Jupyter Notebooks
 
-You need a basic knowledge of python, see e.g. [datacamp python cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PythonForDataScience.pdf). We will use jupyter notebooks and make use of numpy, matlibplot and of course the deep learning libraries TensorFlow, and Keras. For the hands-on part you should install anaconda ([details and installation instruction](anaconda.md)) or use the provided a docker container ([details and installation instruction](docker.md)).
+You need a basic knowledge of python, see e.g. [datacamp python cheat sheet](https://s3.amazonaws.com/assets.datacamp.com/blog_assets/PythonForDataScience.pdf). We will use jupyter notebooks and make use of numpy, matlibplot and of course the deep learning libraries TensorFlow, and Keras. To get an introduction how to work with jupyter notebooks, see for example this [jupyter intro webpage](https://jupyter.org/try).
+
+For the hands-on part you can work via colab which does not require any installation - for getting started with colab follow the [instructions how to use google colab](co.md). Or you can use the provided a docker container ([details and installation instruction](docker.md)), or install anaconda ([details and installation instruction](anaconda.md)) or .
 

@@ -1,13 +1,12 @@
 # How to use the docker container for the course
 
-** Note that it's also possible to use a TensorFlow installation with anaconda, this is especially important for windows users which sometimes struggle quite a lot to install docker **
 
-We provide a docker image [oduerr/tf_docker:cpu_r](https://github.com/oduerr/tf_docker) with [Tensorflow](http://www.tensorflow.org) (v1.5.0) , [TFLearn](http://tflearn.org/), [Keras](https://keras.io/), and many other pre-installed python libraries (numpy, pandas). It also allows to run R-code inside the notebooks. See e.g. [here](https://github.com/oduerr/tf_docker/blob/cpu_r/notebooks/UseR.ipynb) how to use it.
+We provide a docker image [oduerr/tf_docker:cpu_r](https://github.com/oduerr/tf_docker) with [Tensorflow](http://www.tensorflow.org) (v1.13.0) , [TFLearn](http://tflearn.org/), [Keras](https://keras.io/), and many other pre-installed python libraries (numpy, pandas). It also allows to run R-code inside the notebooks. See e.g. [here](https://github.com/oduerr/tf_docker/blob/cpu_r/notebooks/UseR.ipynb) how to use it.
 
 ## Installation of docker
 
 * The official installation guide can be found at: [https://docs.docker.com/engine/installation/](https://docs.docker.com/engine/installation/)
-* In case that the docker installation does not work you can directly install Tensorflow via Anaconda. You can find an installation guide on our website: [Anaconda installation guide](https://github.com/tensorchiefs/dl_course_2018/blob/master/docs/anaconda.md)
+
 
 
 ## Running the container
@@ -16,15 +15,18 @@ In the docker command line execute:
 ```
 docker run -p 8888:8888 -p 6006:6006 -it oduerr/tf_docker:cpu_r
 ```
-open [http://localhost:8888/?token=tensorchiefs](http://localhost:8888/?token=tensorchiefs) or [http://192.168.99.100:8888/tree?token=tensorchiefs](http://192.168.99.100:8888/tree?token=tensorchiefs)(for windows) in the browser. 
+open [http://localhost:8888/?token=tensorchiefs](http://localhost:8888/?token=tensorchiefs) or [http://192.168.99.100:8888/tree?token=tensorchiefs](http://192.168.99.100:8888/tree?token=tensorchiefs)(forcsome versions of windows) in the browser. 
 
 ## Running with a linked file system.
 If you want to access a directory here (/Users/oli/Documents/workspace/dl_tutorial/) from inside the docker container execute:
 
 ```
 docker run -p 8888:8888 -p 6006:6006 -v /Users/oli/Documents/workspace/dl_tutorial/:/notebooks/local/ -it oduerr/tf_docker:cpu_r
+#or for windows users
+docker run -p 8888:8888 -p 6006:6006 -v /c/Users/Elvis/Desktop/:/notebooks/local/ -it oduerr/tf_docker:cpu_r
 ```
 
+If you work with git, we recommend to clone the DL course. Then you can link with the above comand directly to your local copy of the course which allows you to access the prepared notebooks in the course. 
 
 ## Updating
 Please make sure to use the latest container by updating it using 
@@ -50,8 +52,21 @@ The entry before the colon ':' is on the local machine, the one after it inside 
   docker run -v /tmp/dl_tutorial/:/notebooks/dl_tutorial/ #/tmp/dl_tutorial is on local machine
 ```
 
+### Stopping and killing a docker process
 
+To stop a docker image hit 1-time ctrl-c and answer the question to shutdown the notebook server with “Yes”.
+Then you can run again new docker commands.
 
+We sometimes get the error message, that the port is already allocated. If you have not allocated the port by other applications but by a accidantelly running docker image, then you can kill the old docker job. To see the process ID of the jobs we type:
+
+```
+docker ps 
+```
+
+The you get a list of all running docker jobs along with their container ID, which you can use to kill the job. For example (if the ID is 1e3467456) the comand is:
+```
+docker kill 1e3467456 
+```
 
 
 
